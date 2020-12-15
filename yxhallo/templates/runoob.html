@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>{{name}}</title>
+</head>
+<body>
+<h1>{{say}}</h1>
+<!--<h1>{{gg}}</h1>-->
+<!--<p>{{gg.0}}</p>-->
+<p>{{dict}}</p>
+<p>{{dict.name}}</p>
+<p>{{dict.sex|first|upper}}</p>
+<p>{{data|date:'Y-m-d'}}</p>
+<!--{% if gg %}-->
+<!--haha-->
+<!--{% endif %}-->
+
+<!--{% for item in gg reversed %}-->
+<!--{{item}}-->
+<!--{% endfor %}-->
+
+
+{% for i,j in dict.items %}
+{{i}}---{{j}}
+{% endfor %}
+
+{% for item in gg %}
+    {{forloop.counter}}
+    {{forloop.counter0}}
+    <!--{{forloop.revcounter}}-->
+    <!--{{forloop.revcounter0}}-->
+    <br>
+{% endfor %}
+
+
+{%  ifequal 0 3 %}
+    <p>dui</p>
+{% else %}
+    <p>cuo</p>
+{% endifequal %}
+
+{{ views_str|safe}}
+
+
+{% load my_tags %}
+{{ 11|my_filter:22 }}
+
+{% my_tag1 11 22 33 %}
+
+
+{% my_html "zzz" "xxx" %}
+
+
+</body>
+</html>
